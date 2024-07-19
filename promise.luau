@@ -71,6 +71,10 @@ local function asynchronousSafeExecutor(promise: Promise, ...)
 		
 	end
 	
+	task.wait();
+	
+	coroutine.close(routine);
+	
 end
 
 -- PROMISE
@@ -217,7 +221,6 @@ promise.__index = promise;
 
 function promise:Clear()
 	table.clear(self.callbacks);
-	coroutine.close(self.routine);
 	setmetatable(self, nil);
 	self = nil;
 end
