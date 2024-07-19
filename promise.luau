@@ -47,7 +47,7 @@ local function asynchronousSafeExecutor(promise: Promise, ...)
 			
 			for _, v in pairs(promise.callbacks) do
 				
-				if (v.type ~= "catch") then continue end;
+				if (v.type ~= "catch" and v.type ~= "finally") then continue end;
 				
 				task.spawn(v.callback, promise, result);
 				
