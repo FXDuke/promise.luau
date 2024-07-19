@@ -2,7 +2,7 @@
 
 type Promise = {
 	status: string,
-	Then: ((...any?) -> nil, (...any?) -> nil),
+	Then: ((...any?) -> nil, (...any?) -> nil) -> nil,
 	Finally: (...any?) -> nil,
 	Catch: (...any?) -> nil,
 	Reject: (...any?) -> nil,
