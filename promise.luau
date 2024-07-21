@@ -309,11 +309,11 @@ function promise:Then(resolve: (...any?) -> nil, reject: (...any?) -> nil) -- Re
 	insertCallback(self, "reject", reject);
 end
 
-function promise:Finally(callback: (...any?) -> nil) -- Resolution Failure
+function promise:Finally(callback: (...any?) -> nil) -- Resolution Completion
 	insertCallback(self, "finally", callback);
 end
 
-function promise:Catch(callback: (...any?) -> nil) -- Promise Completion
+function promise:Catch(callback: (...any?) -> nil) -- Promise Failure
 	insertCallback(self, "catch", callback);
 end
 
